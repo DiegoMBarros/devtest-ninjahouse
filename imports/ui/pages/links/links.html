@@ -1,0 +1,44 @@
+<template name="links_Page">
+
+  <div class="ui container">
+    <h2>Links</h2>
+  
+  <!-- <form class="info-link-add"> -->
+  <form class="ui form">
+    <div class="field">
+      <input type="text" name="title" placeholder="Título" required>
+    </div>
+    <div class="field">
+      <input type="url" name="url" placeholder="www.exemplo.com.br" required>
+    </div>
+    <div class="field">
+      <select name="group" >
+        <option value="" disabled selected>Selecione</option>
+        <option value="Blog">Blog</option>
+        <option value="Redes sociais">Redes sociais</option>
+        <option value="Outros sites">Outros sites</option>
+      </select>
+    </div>
+    <!-- <input type="submit" name="submit" class="botaoCadastrar" value="Cadastrar"> -->
+    <input type="submit" name="submit" class="ui button green" value="Cadastrar">
+  </form>
+
+    <table class="ui called table">
+      <thead>
+          <th>Título</th>
+          <th>URL</th>
+          <th>Grupo</th>
+      </thead>
+      <tbody>
+        {{#each links}}
+        <tr>
+          <td>{{title}}</td>
+          <td><a href="{{url}}" target="_blank">{{url}}</a></td>
+          <td>{{group}}</td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+  
+</template>
